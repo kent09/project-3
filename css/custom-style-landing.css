@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap');
+
+.top-banner img {
+	width: 100%;
+}
+.week-discount {
+	padding: 10px 15px;
+}
+.week-discount .col-lg-3 {
+	padding: 0 5px;
+}
+.week-discount .col-lg-3:first-child {
+	padding-left: 0px;
+}
+.week-discount .col-lg-3:last-child {
+	padding-right: 0;
+}
+.week-discount .list-holder .title {
+	background-image: url('../img/stone-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 10px 0;
+	color: #000;
+}
+.week-discount .list-holder a:hover {
+	text-decoration: none;
+}
+.week-discount .list-holder {
+	position: relative;
+}
+.discnt-value {
+    align-items: center;
+    background-color: #00B7B7;
+    bottom: 20px;
+    border-radius: 100px;
+    display: flex;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 28px;
+    justify-content: center;
+    height: 62px;
+	position: absolute;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+	right: 20px;
+    width: 62px;
+}
+.discnt-value i {
+	-moz-transform: rotate(-4deg);
+	-webkit-transform: rotate(-4deg);
+	-o-transform: rotate(-4deg);
+	-ms-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+	padding-right: 8px;
+}
+.coupon-content {
+	padding: 25px 0 30px;
+}
+.cpn-box {
+	font-family: 'Sulphur Point', sans-serif;
+	font-size: 36px;
+	padding: 10px 35px;
+	border: 3px solid #000;
+	font-weight: 500;
+	display: inline-block;
+	line-height: normal;
+}
+.cpn-sec p {
+	margin: 0;
+	padding: 12px 0;
+}
+
+@media (max-width: 991px)  {
+	.week-discount {
+		padding: 20px 20px 10px;
+	}
+	.week-discount .row {
+		margin: 0;
+	}
+	.week-discount .col-md-6 {
+		padding: 10px 5px 0;
+	}
+	.week-discount .col-lg-3:first-child {
+		padding-left: 5px;
+	}
+	.week-discount .col-lg-3:last-child {
+		padding-right: 5px;
+	}
+	.cpn-sec {
+		padding-top: 20px;
+	}
+}
+@media (max-width: 767px)  {
+	.landing-page {
+		margin-top: 135px;
+	}
+	.top-banner.mobile {
+		padding: 0;
+	}
+	.cpn-sec {
+		padding-top: 30px;
+	}
+	.coupon-content {
+		text-align: center;
+	}
+	.coupon-content p {
+		margin: 0;
+	}
+}

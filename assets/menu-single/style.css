@@ -1,0 +1,25 @@
+#slick_container {
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+
+.slick-prev, .slick-next {
+	width:60px;
+	height:34px
+}
+.slick-prev:before, .slick-next:before {
+	content:"";
+}
+.slick-slide{height:auto;}
+.slick-track {
+	transition: none;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.show_overflow{
+    overflow: visible !important;
+}

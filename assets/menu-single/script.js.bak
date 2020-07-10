@@ -1,0 +1,81 @@
+jQuery(function ($) {
+	var $arrows = $('.arrows');
+	var $next = $arrows.children(".slick-next");
+	var $prev = $arrows.children(".slick-prev");
+	
+	var slick = $('.your-class').slick({
+		appendArrows: $arrows,
+        onAfterChange: function(elem, a){
+            elem.$slides.each(function(){
+                $(this).find('input[type="radio"]').removeAttr('checked');
+            });
+            $(elem.$slides.get(a)).find('input[type="radio"]').attr('checked', true);
+        }
+	});
+	
+	$('.slick-next').on('click', function (e) {
+		var i = $next.index( this )
+		slick.eq(i).slickNext();
+	});
+	
+	$('.slick-prev').on('click', function (e) {
+		var i = $prev.index( this )
+		slick.eq(i).slickPrev();
+	});
+});
+
+jQuery(document).ready(function($){
+	
+	/*$('.slick-prev, .slick-next').on('click',function(){
+		
+		var prntEle = '.' + $(this).parent().parent().attr('class');
+		
+		$( prntEle + ' input[type="radio"]').each(function(){
+			$(this).removeAttr('checked');
+		});
+		
+		$(prntEle + ' .slick-slide.slick-active input[type="radio"]').attr('checked', true);
+	});*/
+
+	$('.supersnacks_chkbox').on("click", function(){
+	    var isChecked = $(this).attr('checked');
+	    var price=parseFloat($(".pricemenu").attr("data-price"));
+        var total = $('.f45-totalmeals').data('totalmeals');
+	    $(".supersnacks_chkbox").each(function(){
+	        if($(this).attr('checked')){
+	            price = price + parseFloat($(this).attr('data-price'));
+                if($('.f45-totalmeals').length > 0){
+                    var parent = $(this).parent('.f45-snack-checkbox').siblings('.snacks_1row');
+                    var total_elem= parent.find('.snacks_1opts #slick_container').length;
+                    total  = total +total_elem;
+                }
+	        }
+	    });
+	    $(".pricemenu").text("$"+price);
+        if($('.f45-totalmeals').length > 0){
+            $('.f45-totalmeals').text(total);
+        }
+	});
+
+
+    var bfast = $('.breakfastrow').find('.breakfastopts #slick_container').length;
+    var lunch = $('.lunchrow').find('.lunchopts #slick_container').length;
+    var dinner = $('.dinnerrow').find('.dinneropts #slick_container').length;
+
+    $('.f45-totalmeals').data('totalmeals', bfast+lunch+dinner);
+    $('.f45-totalmeals').text(bfast+lunch+dinner);
+
+    $('.slick-active .tooltip').hover(
+        function() {
+            if( $(this).parents('#cg_menu_oto').length > 0){
+                $(this).parents('#cg_menu_oto').css('overflow', 'visible');
+            }
+
+        }, function() {
+            if( $(this).parents('#cg_menu_oto').length > 0){
+                $(this).parents('#cg_menu_oto').css('overflow', 'hidden');
+            }
+        }
+    );
+
+});
